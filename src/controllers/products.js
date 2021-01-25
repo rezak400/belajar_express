@@ -10,11 +10,21 @@ exports.getAllProducts = (req,res,next) => {
 }
  
 exports.createProduct = (req,res,next) => {
+    //! Console bisa dilihat di node terminal
+    console.log(`lihat request`, req.body)
+
+    //! Destructuring ES6 js
+    const { name, quantity } = req.body
+    console.log({name, quantity}, ` // ambil dari req body`)
+
+
     res.json({       
         message : "Berhasil POST",
         data : [{
-            nama : "Sari roti post",
-            quantity : 20
+            id: 1,
+            //! Destructing ES6, jdi gk usah name:name
+            name,
+            quantity
         }]
     })
     next()
