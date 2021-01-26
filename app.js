@@ -23,6 +23,12 @@ const authRoutes = require("./src/routes/auth")
 //! ini wajib, karna app itu corenya, dan harus callback router agar bisa dipake
 app.use("/v1", productRoutes)
 app.use("/v1/auth", authRoutes)
+app.use("/", (req,res) => {
+    res.json({
+        path : "go to /v1/products"
+    })
+})
+
 
 
 //! Atur PORT   
