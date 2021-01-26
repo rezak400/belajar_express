@@ -13,13 +13,11 @@ exports.getAllProducts = (req,res,next) => {
  
 exports.createProduct = (req,res,next) => {
     //! Console bisa dilihat di node terminal
-    console.log(`lihat request`, req.body)
+    // console.log(`lihat request`, req.body)
 
     //! Destructuring ES6 js
     const { name, quantity } = req.body
-    console.log({name, quantity}, ` // ambil dari req body`)
-
-
+    // console.log({name, quantity}, ` // ambil dari req body`)
     res.json({       
         message : "Berhasil POST",
         data : [{
