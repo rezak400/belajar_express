@@ -6,6 +6,8 @@ exports.getAllProducts = (req,res,next) => {
             quantity : 14
         }]
     })
+
+    //? next buat apa?
     next()
 }
  

@@ -8,8 +8,6 @@ const cors = require('cors')
 //! Body parser untuk menerjemahkan data dari request yg macem2, bisa json, xml, dll
 const bodyParser = require("body-parser")
 
-//! Ambil route mvc yg suda dibuat
-const productRoutes = require("./src/routes/products")
 
 //! Body parser untuk menerjemahkan data dari request yg macem2, bisa json, xml, dll
 app.use(bodyParser.json())
@@ -17,11 +15,21 @@ app.use(bodyParser.json())
 //! Mengaktifkan fungsi CORS
 app.use(cors())
 
+
+//! Ambil route mvc yg suda dibuat
+const productRoutes = require("./src/routes/products")
+const authRoutes = require("./src/routes/auth")
+
 //! ini wajib, karna app itu corenya, dan harus callback router agar bisa dipake
-app.use("/", productRoutes)
- 
+app.use("/v1", productRoutes)
+app.use("/v1/auth", authRoutes)
+
+
 //! Atur PORT   
-app.listen(4000);
+const port = 4000
+app.listen(process.env.PORT || port , () => {
+    console.log(`Listening on port ${port}`)
+});
 
 //! ini cara gamblang buat api tanpa controller router
 // const router = express.Router()
