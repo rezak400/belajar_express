@@ -6,11 +6,12 @@ const validator = require("../helper/validator")
 const router = express.Router()
 
 //! ngambil modul dari controller
-const blogController = require("../controllers/blog")
+const blogController = require("../controllers/C_Blog")
 
 // ! mengambil controller sebagai callback
-//? url = /v1/blog/{method}
-router.get("/get", blogController.getAllBlog)
+//? url = /v1/blog{method}
+router.get("/", blogController.getAllBlog)
+router.get("/:id", blogController.getBlogById)
 router.post("/post", validator.createBlog, blogController.createBlog)
 
 module.exports = router
