@@ -9,7 +9,7 @@ const router = express.Router()
 const blogController = require("../controllers/C_Blog")
 
 // ! mengambil controller sebagai callback
-//? url = /v1/blog{method}
+//? url = /v1/blog
 router.get("/", blogController.getAllBlog)
 router.get("/:id", blogController.getBlogById)
 router.post("/post", validator.createBlog, blogController.createBlog)
