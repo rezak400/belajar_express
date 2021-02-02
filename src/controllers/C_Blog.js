@@ -49,7 +49,8 @@ exports.createBlog = (req,res,next) => {
 }
 
 exports.getAllBlog = (req,res,next) => {
-    BlogModel.find()
+    //! diurutin dari yg duluan di buat
+    BlogModel.find().sort({createdAt:-1})
     .then(result => {
         res.status(200).json({
             message : "Data Blog berhasil di GET",
