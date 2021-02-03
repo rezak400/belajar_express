@@ -28,7 +28,7 @@ const fileFilter = (req,file,cb) => {       //? setting file filter
     if( file.mimetype === "image/png" ||
         file.mimetype === "image/jpg" || 
         file.mimetype === "image/jpeg" ){
-        cb(null, true)
+        cb(null, true)      //? ini kyknya ngirim req.file yg nanti di terima di controller
     } else {
         cb(null, false)
     }

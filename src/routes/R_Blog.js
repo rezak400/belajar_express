@@ -13,5 +13,7 @@ const blogController = require("../controllers/C_Blog")
 router.get("/", blogController.getAllBlog)
 router.get("/:id", blogController.getBlogById)
 router.post("/post", validator.createBlog, blogController.createBlog)
+router.put("/put/:id", blogController.updateBlog)
+router.delete("/delete/:id", blogController.deleteBlog)
 
 module.exports = router
